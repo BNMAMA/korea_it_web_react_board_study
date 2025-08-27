@@ -34,21 +34,21 @@ function Signup() {
 			username: username,
 			password: password,
 			email: email,
-		
-		}).then((response)=> {
-			console.log(response.data);
-			if(response.data.stauts === "success"){
-				alert(response.data.message);
-				navigate("/auth.signin")
-			} else if(response.data.state === "failed") {
-				alert(response.data.message);
+		})
+			.then((response) => {
+				console.log(response.data);
+				if (response.data.status === "success") {
+					alert(response.data.message);
+					navigate("/auth/signin");
+				} else if (response.data.status === "failed") {
+					alert(response.data.message);
+					return;
+				}
+			})
+			.catch((error) => {
+				alert("문제가 발생했습니다. 다시 시도해주세요.");
 				return;
-			}
-		}) .catch((error) => {
-			alert("문제가 발생했습니다. 다시 시도해주세요.")
-			return;
-			
-		});
+			});
 	};
 
 	useEffect(() => {

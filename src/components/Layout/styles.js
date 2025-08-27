@@ -11,6 +11,4 @@ export const layout = css`
 export const mainContainer = css`
 	width: 60%;
 	height: calc(100vh - 60px);
-	
-	
 `;
