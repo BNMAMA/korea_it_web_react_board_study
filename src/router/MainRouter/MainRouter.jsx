@@ -4,6 +4,7 @@ import Write from "../../pages/Write/Write";
 import Board from "../../pages/Board/Board";
 import AuthRouter from "../AuthRouter/AuthRouter";
 import ProtectedRoute from "../../components/ProtectedRoute/ProtectedRoute";
+import BoardDetail from "../../pages/BoardDetail/BoardDetail";
 
 function MainRouter() {
 	return (
@@ -20,6 +21,10 @@ function MainRouter() {
 					</ProtectedRoute>
 					
 				}/>
+				<Route path="board/:boardId" element={
+					<ProtectedRoute>
+					<BoardDetail/>
+				</ProtectedRoute>}/>
 				<Route path="/auth/*" element={<AuthRouter />} />
 			</Routes>
 		</>
