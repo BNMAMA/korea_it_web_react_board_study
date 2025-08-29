@@ -45,3 +45,12 @@ export const removeBoard = async (boardId) => {
 		return error.response;
 	}
 };
+
+export const updateBoardRequest = async (boardId) => {
+	try {
+		const response = await instance.post(`/board/update/${boardId}`);
+		return response;
+	} catch (error) {
+		return error.response;
+	}
+};
